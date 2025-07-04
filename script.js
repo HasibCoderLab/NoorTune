@@ -25,7 +25,7 @@ const tracks = {
       cover: 'media/covers/waz1.jpg'
     },
     'waz2.mp3': {
-      title: 'মাওলানা হাফেজ ফয়জুল্লাহ',
+      title: 'আবু-ত্বহা_মুহাম্মদ_আদনান',
       cover: 'media/covers/waz2.jpg'
     }
   },
