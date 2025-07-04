@@ -11,8 +11,8 @@ EchoTune-Islamic/
 │   │   ├── surah_fatiha.mp3
 │   │   └── surah_ikhlas.mp3
 │   ├── covers/
-│   │   ├── waz1.jpg
-│   │   ├── waz2.jpg
+│   │   ├── waz1.png
+│   │   ├── waz2.png
 │   │   ├── fatiha.jpg
 │   │   └── ikhlas.jpg
 │   └── pattern-islamic.png

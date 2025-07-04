@@ -25,7 +25,7 @@ const tracks = {
       cover: 'media/covers/waz1.jpg'
     },
     'waz2.mp3': {
-      title: 'আবু-ত্বহা_মুহাম্মদ_আদনান',
+      title: 'মাওলানা হাফেজ ফয়জুল্লাহ',
       cover: 'media/covers/waz2.jpg'
     }
   },
@@ -66,4 +66,3 @@ modeToggle.addEventListener('click', () => {
   document.body.classList.toggle('light-mode');
   modeToggle.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
 });
-s
