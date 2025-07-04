@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: 'Noto Sans Bengali', sans-serif;
     background: #0f3d3e;
     color: #fff;
@@ -70,6 +70,127 @@ body {
   footer {
     margin-top: 50px;
     color: #aaa;
+  }
+  
+  .background-pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('media/pattern-islamic.png');
+    background-size: cover;
+    opacity: 0.1;
+    z-index: 0;
+  }
+  
+  body.light-mode .background-pattern {
+    opacity: 0.2;
+  }
+  
+  #cover {
+    width: 200px;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+   */
+
+   body {
+    font-family: 'Noto Sans Bengali', sans-serif;
+    background: #0f3d3e;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    transition: background 0.4s ease;
+  }
+  
+  body.light-mode {
+    background: #f0fff0;
+    color: #222;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  #clock {
+    font-size: 1.3rem;
+    margin-top: 10px;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+  }
+  
+  #modeToggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .section {
+    margin: 30px 0;
+  }
+  
+  select {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    margin-top: 10px;
+    background: #fff;
+    color: #000;
+  }
+  
+  #controls {
+    margin-top: 20px;
+  }
+  
+  #controls button {
+    font-size: 2rem;
+    background: #1c5a5c;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin: 0 5px;
+  }
+  
+  #progressContainer {
+    width: 80%;
+    height: 8px;
+    background: #fff;
+    margin: 10px auto;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  #progressBar {
+    height: 100%;
+    width: 0%;
+    background-color: #4caf50;
+    transition: width 0.3s;
+  }
+  
+  footer {
+    margin-top: 50px;
+    color: #aaa;
+  }
+  
+  footer .social-links a {
+    color: inherit;
+    margin: 0 10px;
+    text-decoration: none;
   }
   
   .background-pattern {

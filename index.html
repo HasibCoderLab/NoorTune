@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="bn">
 <head>
   <meta charset="UTF-8" />
@@ -49,6 +49,80 @@
 
     <footer>
       <p>© 2025 NoorTune  ইসলামিক| Designed & Programmed by Hasib Hasan · All rights reserved.</p>
+    </footer>
+
+    <audio id="audioPlayer" hidden></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NoorTune ইসলামিক</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="icon.png" type="image/x-icon" />
+</head>
+<body>
+  <div class="background-pattern"></div>
+  <div class="container">
+    <header>
+      <h1>🌙 NoorTune ইসলামিক</h1>
+      <p>ওয়াজ ও কুরআনের তেলাওয়াত একসাথে শুনুন</p>
+      <button id="modeToggle">🌙</button>
+    </header>
+
+    <div id="clock"></div>
+
+    <section class="quotes">
+      <p id="quote">“রহমতের দরজা সবসময় খোলা।”</p>
+    </section>
+
+    <img id="cover" hidden>
+    <h2 id="title" hidden></h2>
+
+    <main>
+      <div class="section">
+        <h2>📢 ওয়াজ বক্তা নির্বাচন করুন</h2>
+        <select id="wazSpeaker">
+          <option value="">বক্তা বাছাই করুন</option>
+          <option value="tariq">মাওলানা তারিক জামিল</option>
+          <option value="fayzul">মাওলানা হাফেজ ফয়জুল্লাহ</option>
+        </select>
+        <div id="wazPlaylist"></div>
+      </div>
+
+      <div class="section">
+        <h2>📖 কুরআন তেলাওয়াত</h2>
+        <select onchange="playAudio('quran', this.value)">
+          <option value="">সুরা নির্বাচন করুন</option>
+          <option value="surah_fatiha.mp3">সূরা ফাতিহা</option>
+          <option value="surah_ikhlas.mp3">সূরা ইখলাস</option>
+        </select>
+      </div>
+
+      <div id="controls">
+        <button onclick="previousTrack()">⏮️</button>
+        <button onclick="togglePlay()">⏯️</button>
+        <button onclick="nextTrack()">⏭️</button>
+        <div id="progressContainer">
+          <div id="progressBar"></div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2025 NoorTune | Developed by Hasib</p>
+      <div class="social-links">
+        <a href="https://facebook.com/yourprofile" target="_blank">Facebook</a>
+        <a href="https://github.com/HasibCoderLab" target="_blank">GitHub</a>
+        <a href="https://yourportfolio.com" target="_blank">Portfolio</a>
+      </div>
     </footer>
 
     <audio id="audioPlayer" hidden></audio>
