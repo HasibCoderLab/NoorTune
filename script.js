@@ -21,12 +21,12 @@ setInterval(() => {
 const tracks = {
   waz: {
     'waz1.mp3': {
-      title: 'মাওলানা তারিক জামিল',
-      cover: 'media/covers/waz1.jpg'
+      title: 'কথা গুলো আপনাকে নাড়া দিবে | আবু ত্বহা মুহাম্মদ আদনান ',
+      cover: 'media/covers/waz1.png'
     },
     'waz2.mp3': {
-      title: 'মাওলানা হাফেজ ফয়জুল্লাহ',
-      cover: 'media/covers/waz2.jpg'
+      title: ' ছেড়ে দেওয়ার মাঝে সুখ আছে | আবু ত্বহা মুহাম্মদ আদনান',
+      cover: 'media/covers/waz2.png'
     }
   },
   quran: {
