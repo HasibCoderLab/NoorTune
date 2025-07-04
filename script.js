@@ -100,17 +100,20 @@ setInterval(() => {
   const now = new Date();
   let hours = now.getHours();
   let minutes = now.getMinutes();
+  let seconds = now.getSeconds();
   let ampm = hours >= 12 ? 'PM' : 'AM';
   hours = hours % 12 || 12;
   minutes = minutes < 10 ? '0' + minutes : minutes;
-  clockDiv.innerText = `🕰️ ${hours}:${minutes} ${ampm}`;
+  seconds = seconds < 10 ? '0' + seconds : seconds;
+  clockDiv.innerText = `🕰️ ${hours}:${minutes}:${seconds} ${ampm}`;
 }, 1000);
+
 
 // ---------------- Speaker Data ---------------- //
 const wazData = {
   tariq: [
-    { file: 'waz1.mp3', title: 'তরিক জামিল - ১', cover: 'media/covers/waz1.jpg' },
-    { file: 'waz2.mp3', title: 'তরিক জামিল - ২', cover: 'media/covers/waz2.jpg' }
+    { file: 'waz1.mp3', title: 'তরিক জামিল - ১', cover: 'media/covers/waz1.png' },
+    { file: 'waz2.mp3', title: 'তরিক জামিল - ২', cover: 'media/covers/waz2.png' }
   ],
   fayzul: [
     { file: 'fayzul1.mp3', title: 'ফয়জুল্লাহ - ১', cover: 'media/covers/fayzul1.jpg' },
