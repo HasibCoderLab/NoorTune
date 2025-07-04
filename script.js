@@ -1,72 +1,3 @@
-// const audio = document.getElementById('audioPlayer');
-// const quoteText = document.getElementById('quote');
-// const modeToggle = document.getElementById('modeToggle');
-// const coverImg = document.getElementById('cover');
-// const titleText = document.getElementById('title');
-// let isPlaying = false;
-
-// const quotes = [
-//   "“রহমতের দরজা সবসময় খোলা।”",
-//   "“আল্লাহ সবরকারীদের সাথে আছেন।”",
-//   "“যে তওবা করে, সে গুনাহ মুক্ত।”",
-//   "“কুরআন হল হৃদয়ের নূর।”"
-// ];
-
-// let quoteIndex = 0;
-// setInterval(() => {
-//   quoteIndex = (quoteIndex + 1) % quotes.length;
-//   quoteText.innerText = quotes[quoteIndex];
-// }, 5000);
-
-// const tracks = {
-//   waz: {
-//     'waz1.mp3': {
-//       title: 'কথা গুলো আপনাকে নাড়া দিবে | আবু ত্বহা মুহাম্মদ আদনান ',
-//       cover: 'media/covers/waz1.png'
-//     },
-//     'waz2.mp3': {
-//       title: ' ছেড়ে দেওয়ার মাঝে সুখ আছে | আবু ত্বহা মুহাম্মদ আদনান',
-//       cover: 'media/covers/waz2.png'
-//     }
-//   },
-//   quran: {
-//     'surah_fatiha.mp3': {
-//       title: 'সূরা ফাতিহা',
-//       cover: 'media/covers/fatiha.jpg'
-//     },
-//     'surah_ikhlas.mp3': {
-//       title: 'সূরা ইখলাস',
-//       cover: 'media/covers/ikhlas.jpg'
-//     }
-//   }
-// };
-
-// function playAudio(type, file) {
-//   if (!file) return;
-//   audio.src = `media/audio/${file}`;
-//   audio.play();
-//   isPlaying = true;
-//   titleText.textContent = tracks[type][file].title;
-//   coverImg.src = tracks[type][file].cover;
-//   coverImg.hidden = false;
-//   titleText.hidden = false;
-// }
-
-// function togglePlay() {
-//   if (!audio.src) return;
-//   if (isPlaying) {
-//     audio.pause();
-//   } else {
-//     audio.play();
-//   }
-//   isPlaying = !isPlaying;
-// }
-
-// modeToggle.addEventListener('click', () => {
-//   document.body.classList.toggle('light-mode');
-//   modeToggle.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
-// });
-
 const audio = document.getElementById('audioPlayer');
 const quoteText = document.getElementById('quote');
 const modeToggle = document.getElementById('modeToggle');
@@ -76,12 +7,13 @@ const wazSpeakerSelect = document.getElementById('wazSpeaker');
 const wazPlaylistDiv = document.getElementById('wazPlaylist');
 const clockDiv = document.getElementById('clock');
 const progressBar = document.getElementById('progressBar');
+const currentTimeDisplay = document.getElementById('currentTime');
+const durationDisplay = document.getElementById('duration');
 
 let isPlaying = false;
 let currentList = [];
 let currentIndex = 0;
 
-// ---------------- Islamic Quotes Slider ---------------- //
 const quotes = [
   "“রহমতের দরজা সবসময় খোলা।”",
   "“আল্লাহ সবরকারীদের সাথে আছেন।”",
@@ -95,7 +27,7 @@ setInterval(() => {
   quoteText.innerText = quotes[quoteIndex];
 }, 5000);
 
-// ---------------- Clock Setup (12-hour format) ---------------- //
+// ⏰ Clock Setup
 setInterval(() => {
   const now = new Date();
   let hours = now.getHours();
@@ -108,8 +40,7 @@ setInterval(() => {
   clockDiv.innerText = `🕰️ ${hours}:${minutes}:${seconds} ${ampm}`;
 }, 1000);
 
-
-// ---------------- Speaker Data ---------------- //
+// 📜 Waz Speaker Data
 const wazData = {
   tariq: [
     { file: 'waz1.mp3', title: 'তরিক জামিল - ১', cover: 'media/covers/waz1.png' },
@@ -121,7 +52,7 @@ const wazData = {
   ]
 };
 
-// ---------------- Quran Surah Data ---------------- //
+// 📖 Quran Surah Data
 const quranTracks = {
   'surah_fatiha.mp3': {
     title: 'সূরা ফাতিহা',
@@ -133,7 +64,7 @@ const quranTracks = {
   }
 };
 
-// ---------------- Render Waz Playlist ---------------- //
+// 🔁 Render Speaker Playlist
 function renderWazPlaylist(speaker) {
   wazPlaylistDiv.innerHTML = '';
   currentList = wazData[speaker] || [];
@@ -152,7 +83,7 @@ wazSpeakerSelect.addEventListener('change', (e) => {
   renderWazPlaylist(e.target.value);
 });
 
-// ---------------- Play Functions ---------------- //
+// ▶️ Play Function (Speaker)
 function playFromPlaylist(index) {
   const track = currentList[index];
   if (!track) return;
@@ -166,6 +97,7 @@ function playFromPlaylist(index) {
   titleText.hidden = false;
 }
 
+// ▶️ Play Function (Quran)
 function playAudio(type, file) {
   if (!file) return;
   const track = quranTracks[file];
@@ -180,6 +112,7 @@ function playAudio(type, file) {
   titleText.hidden = false;
 }
 
+// 🔁 Play Control
 function togglePlay() {
   if (!audio.src) return;
   isPlaying ? audio.pause() : audio.play();
@@ -198,13 +131,28 @@ function previousTrack() {
   playFromPlaylist(currentIndex);
 }
 
-// ---------------- Progress Bar ---------------- //
-audio.addEventListener('timeupdate', () => {
-  const percent = (audio.currentTime / audio.duration) * 100;
-  progressBar.style.width = percent + '%';
+// ⏳ Progress Bar Setup
+function formatTime(seconds) {
+  const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
+  const secs = Math.floor(seconds % 60).toString().padStart(2, '0');
+  return `${mins}:${secs}`;
+}
+
+audio.addEventListener('loadedmetadata', () => {
+  progressBar.max = audio.duration;
+  durationDisplay.textContent = formatTime(audio.duration);
 });
 
-// ---------------- Mode Toggle ---------------- //
+audio.addEventListener('timeupdate', () => {
+  progressBar.value = audio.currentTime;
+  currentTimeDisplay.textContent = formatTime(audio.currentTime);
+});
+
+progressBar.addEventListener('input', () => {
+  audio.currentTime = progressBar.value;
+});
+
+// 🌙 Mode Toggle
 modeToggle.addEventListener('click', () => {
   document.body.classList.toggle('light-mode');
   modeToggle.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
