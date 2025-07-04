@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EchoTune ইসলামিক</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="icon.png" type="image/x-icon" />
+</head>
+<body>
+  <div class="background-pattern"></div>
+  <div class="container">
+    <header>
+      <h1>🌙 EchoTune ইসলামিক</h1>
+      <p>ইসলামী অডিও শুনুন – ওয়াজ ও কুরআন তেলাওয়াত</p>
+      <button id="modeToggle">🌙</button>
+    </header>
+
+    <section class="quotes">
+      <p id="quote">“রহমতের দরজা সবসময় খোলা।”</p>
+    </section>
+
+    <img id="cover" hidden>
+    <h2 id="title" hidden></h2>
+
+    <main>
+      <div class="section">
+        <h2>📢 ওয়াজ</h2>
+        <select onchange="playAudio('waz', this.value)">
+          <option value="">ওয়াজ নির্বাচন করুন</option>
+          <option value="waz1.mp3">মাওলানা তারিক জামিল</option>
+          <option value="waz2.mp3">মাওলানা হাফেজ ফয়জুল্লাহ</option>
+        </select>
+      </div>
+
+      <div class="section">
+        <h2>📖 কুরআন তেলাওয়াত</h2>
+        <select onchange="playAudio('quran', this.value)">
+          <option value="">সুরা নির্বাচন করুন</option>
+          <option value="surah_fatiha.mp3">সূরা ফাতিহা</option>
+          <option value="surah_ikhlas.mp3">সূরা ইখলাস</option>
+        </select>
+      </div>
+
+      <div id="controls">
+        <button onclick="togglePlay()">⏯️</button>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2025 EchoTune ইসলামিক</p>
+    </footer>
+
+    <audio id="audioPlayer" hidden></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
