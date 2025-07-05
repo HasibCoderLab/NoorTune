@@ -178,6 +178,42 @@
     accent-color: #38b000;
     cursor: pointer;
   }
+  .feedback-section {
+    background-color: #f4f6f8;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 2px solid #38b000;
+  }
+  
+  .feedback-form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .feedback-form input,
+  .feedback-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .feedback-form button {
+    background-color: #38b000;
+    color: white;
+    padding: 10px;
+    border: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .feedback-form button:hover {
+    background-color: #2f8d00;
+  }
   
   
   footer {
