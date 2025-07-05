@@ -179,7 +179,7 @@
     cursor: pointer;
   }
   
-  
+/*   
   footer {
     margin-top: 50px;
     color: #aaa;
@@ -199,7 +199,36 @@
   
   .social-links i {
     margin-right: 6px;
-    color: #4CAF50; /* icon color*/
+    color: #4CAF50; /* icon color
+  }  */
+  
+  footer {
+    margin-top: 50px;
+    text-align: center;
+    padding: 20px;
+    color: #aaa;
+  }
+  
+  footer .social-links {
+    margin-top: 10px;
+  }
+  
+  footer .social-links a {
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #decaca;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  footer .social-links a:hover {
+    color: #4CAF50;
+  }
+  
+  footer .social-links i {
+    margin-right: 6px;
+    color: #4CAF50;
   }
   
   
