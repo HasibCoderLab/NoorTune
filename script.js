@@ -46,9 +46,9 @@ const wazData = {
     { file: 'waz1.mp3', title: 'আবু  ত্বহা - ১', cover: 'media/covers/waz1.png' },
     { file: 'waz2.mp3', title: 'আবু  ত্বহা - ২', cover: 'media/covers/waz2.png' }
   ],
-  fayzul: [
-    { file: 'fayzul1.mp3', title: 'নজরুল  ইসলাম  - ১', cover: 'media/covers/fayzul1.jpg' },
-    { file: 'fayzul2.mp3', title: 'নজরুল  ইসলাম  - ২', cover: 'media/covers/fayzul2.jpg' }
+  Qasemi: [
+    { file: 'এই উম্মত.mp3',  title: 'এই উম্মত', cover: 'media/covers/Qasemi-1.png' },
+    { file: 'চমৎকর এক.mp3', title: 'চমৎকর এক', cover: 'media/covers/Qasemi-2.png' }
   ]
 };
 
