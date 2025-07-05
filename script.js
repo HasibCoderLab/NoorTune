@@ -43,12 +43,12 @@ setInterval(() => {
 // 📜 Waz Speaker Data
 const wazData = {
   tariq: [
-    { file: 'waz1.mp3', title: 'তরিক জামিল - ১', cover: 'media/covers/waz1.png' },
-    { file: 'waz2.mp3', title: 'তরিক জামিল - ২', cover: 'media/covers/waz2.png' }
+    { file: 'waz1.mp3', title: 'আবু  ত্বহা - ১', cover: 'media/covers/waz1.png' },
+    { file: 'waz2.mp3', title: 'আবু  ত্বহা - ২', cover: 'media/covers/waz2.png' }
   ],
   fayzul: [
-    { file: 'fayzul1.mp3', title: 'ফয়জুল্লাহ - ১', cover: 'media/covers/fayzul1.jpg' },
-    { file: 'fayzul2.mp3', title: 'ফয়জুল্লাহ - ২', cover: 'media/covers/fayzul2.jpg' }
+    { file: 'fayzul1.mp3', title: 'নজরুল  ইসলাম  - ১', cover: 'media/covers/fayzul1.jpg' },
+    { file: 'fayzul2.mp3', title: 'নজরুল  ইসলাম  - ২', cover: 'media/covers/fayzul2.jpg' }
   ]
 };
 
