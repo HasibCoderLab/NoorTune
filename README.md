@@ -15,10 +15,10 @@ NoorTune/
 │   ├── covers/
 │   │   ├── waz1.png
 │   │   ├── waz2.png
-│   │   ├── Qasemi-1.png
+│   │   ├── এই উম্মত.png
 │   │   ├── চমৎকার একটি ওয়াজ-2.png
-│   │   ├── fatiha.jpg
-│   │   └── ikhlas.jpg
+│   │   ├── fatiha.png
+│   │   └── ikhlas.png
 │   └── OIG1.webp  ← (favicon)
 └── README.md 
 

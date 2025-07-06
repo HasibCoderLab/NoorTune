@@ -56,11 +56,11 @@ const wazData = {
 const quranTracks = {
   'surah_fatiha.mp3': {
     title: 'সূরা ফাতিহা',
-    cover: 'media/covers/fatiha.jpg'
+    cover: 'media/covers/fatiha.png'
   },
   'surah_ikhlas.mp3': {
     title: 'সূরা ইখলাস',
-    cover: 'media/covers/ikhlas.jpg'
+    cover: 'media/covers/ikhlas.png'
   }
 };
 
