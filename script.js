@@ -47,7 +47,7 @@ const wazData = {
     { file: 'waz2.mp3', title: 'আবু  ত্বহা - ২', cover: 'media/covers/waz2.png' }
   ],
   Qasemi: [
-    { file: 'এই উম্মত.mp3',  title: 'এই উম্মত', cover: 'media/covers/Qasemi-1.png' },
+    { file: 'এই উম্মত.mp3', title: 'এই উম্মত', cover: 'media/covers/Qasemi-1.png' },
     { file: 'চমৎকর এক.mp3', title: 'চমৎকর এক', cover: 'media/covers/Qasemi-2.png' }
   ]
 };
@@ -72,6 +72,9 @@ const quranTracks = {
   }
 };
 
+// 🔁 Quran file list for playlist
+const quranTrackList = Object.keys(quranTracks);
+
 // 🔁 Render Speaker Playlist
 function renderWazPlaylist(speaker) {
   wazPlaylistDiv.innerHTML = '';
@@ -91,21 +94,33 @@ wazSpeakerSelect.addEventListener('change', (e) => {
   renderWazPlaylist(e.target.value);
 });
 
-// ▶️ Play Function (Speaker)
+// ▶️ Play From Playlist (for Waz or Quran)
 function playFromPlaylist(index) {
   const track = currentList[index];
   if (!track) return;
-  audio.src = `media/audio/${track.file}`;
+
+  if (typeof track === 'string') {
+    // Quran
+    const qTrack = quranTracks[track];
+    if (!qTrack) return;
+    audio.src = `media/audio/${track}`;
+    titleText.textContent = qTrack.title;
+    coverImg.src = qTrack.cover;
+  } else {
+    // Waz
+    audio.src = `media/audio/${track.file}`;
+    titleText.textContent = track.title;
+    coverImg.src = track.cover;
+  }
+
   audio.play();
   isPlaying = true;
   currentIndex = index;
-  titleText.textContent = track.title;
-  coverImg.src = track.cover;
   coverImg.hidden = false;
   titleText.hidden = false;
 }
 
-// ▶️ Play Function (Quran)
+// ▶️ Play Function (Quran only)
 function playAudio(type, file) {
   if (!file) return;
   const track = quranTracks[file];
@@ -113,7 +128,12 @@ function playAudio(type, file) {
   audio.src = `media/audio/${file}`;
   audio.play();
   isPlaying = true;
-  currentList = [];
+  if (type === 'quran') {
+    currentList = quranTrackList;
+    currentIndex = quranTrackList.indexOf(file);
+  } else {
+    currentList = [];
+  }
   titleText.textContent = track.title;
   coverImg.src = track.cover;
   coverImg.hidden = false;
@@ -164,4 +184,8 @@ progressBar.addEventListener('input', () => {
 modeToggle.addEventListener('click', () => {
   document.body.classList.toggle('light-mode');
   modeToggle.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
+});
+// 🔁 Auto next when track ends
+audio.addEventListener('ended', () => {
+  nextTrack();
 });
