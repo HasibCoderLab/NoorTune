@@ -61,6 +61,10 @@ const quranTracks = {
   'surah_ikhlas.mp3': {
     title: 'সূরা ইখলাস',
     cover: 'media/covers/ikhlas.png'
+  },
+  'surah-ar-rahman.mp3': {
+    title: 'সূরা আর-রহমান',
+    cover: 'media/covers/Ar-Rahman.png'
   }
 };
 
