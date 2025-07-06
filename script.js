@@ -65,6 +65,10 @@ const quranTracks = {
   'surah-ar-rahman.mp3': {
     title: 'সূরা আর-রহমান',
     cover: 'media/covers/Ar-Rahman.png'
+  },
+  'surah_yasin.mp3': {
+    title: 'সূরা ইয়াসিন سورة يس',
+    cover: 'media/covers/yasin.png'
   }
 };
 
